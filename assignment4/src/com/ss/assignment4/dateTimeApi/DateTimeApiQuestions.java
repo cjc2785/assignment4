@@ -1,4 +1,4 @@
-package com.ss.assignment4.lambdasAndStreams;
+package com.ss.assignment4.dateTimeApi;
 
 import java.time.ZoneId;
 import java.time.DayOfWeek;
