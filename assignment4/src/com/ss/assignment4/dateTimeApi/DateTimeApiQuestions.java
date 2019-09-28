@@ -14,7 +14,7 @@ import java.time.Instant;
 import java.time.temporal.TemporalAdjusters;
 
 /*
- * 1) LocalDateTime (java.time.ZonedDateTime)
+ * 1) LocalDateTime (java.time.LocalDateTime)
  *
  */
 
@@ -22,7 +22,7 @@ class TimeQuestion2 {
 	
 	static LocalDate getPrevThursday(LocalDate date) {
 		
-		return date.with(TemporalAdjusters.previous(DayOfWeek.MONDAY));
+		return date.with(TemporalAdjusters.previous(DayOfWeek.THURSDAY));
 	}
 }
 
@@ -72,7 +72,13 @@ class TimeQuestion6 {
 		
 		for(int i = 1; i <= length; ++i) {
 			
+			
 			LocalDate day = yearMonth.atDay(i);
+			
+			if(day.getDayOfWeek() != DayOfWeek.MONDAY) {
+				continue;
+			}
+			
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
 			String display = formatter.format(day);
 			System.out.println(display);
